@@ -1,0 +1,39 @@
+1) What is the keyword that declares a variable?
+2) how to declared a variable?
+3) how to declared multiple variable in one line/statement?
+4) In a single statement declare a variable and assign a string to it. 
+5) Assign a string to a variable that has already been declared.
+6) This statement has already been coded.
+	var bestMan = "Charlie";
+	Assign the variable a new string value.
+7) how to alert a variable?
+8) If a number is enclosed in quotes, it's a ______. example.("10")? 
+9) What is the value of total?
+	var a = 100;
+	var b = 10;
+	var total = a + b;
+10) alert('10' + '20');
+11) alert(10 + '20');
+12) In a single statement declare a variable and assign a number to it. 
+13) Rewrite this using camelCase.
+	var Nameofband;
+14) Legal and Illegal variables names.
+	a) COUNT
+	b) 1st
+	c) _file1
+	d) FILE*
+	e) $count
+	f) The Answer
+	g) user$name
+	h) alert
+	i) HOME_DIRECTORY
+15) var num = "3"; Statement is true or false?
+16) var num1 = 15, num2 = 10; Statement is true or false?
+17) What is the value in variables num1 and num2
+		var num1 = num2 = 4;
+18) Which of the following are legal and illegal
+	a) var $ = 10;       
+	b) var _ = 50;
+	c) var a_ = 10;
+	d) var *a = 5; 
+19)  alert("<div></div>");

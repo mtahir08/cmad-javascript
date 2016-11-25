@@ -1,0 +1,15 @@
+1) Inside which HTML element do we put the JavaScript?
+2) What is the keyword that displays a message box?
+3) alert syntex.
+	a)alert "message";
+	b)alert 'message';
+	c)alert("message");
+	d)alert('message');
+	e)Alert("message");
+	f)Alert('message');
+4)I created a file script.js. I added it in HTML document and then I start adding code in
+script.js like
+<script>
+alert("Hello World")
+</script>
+Am I doing something right?
