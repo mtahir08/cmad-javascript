@@ -1,0 +1,102 @@
+
+
+
+1) var num = "10";
+
+   console.log(num--);
+
+   console.log(num);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2) num = 10++; 
+   console.log(7++);//7,8
+   console.log(num);//11,11
+
+
+
+
+
+
+
+
+
+
+
+
+
+3) var num = 10;
+   num = num + num++;//21,20
+
+
+
+
+
+
+
+
+
+4) var num = 10;
+   num = num++ - num-- + num;//10,-1,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	   10  - 11    
+ 		-1     + 10
+var num = 10;
+var num2 = num++;//num = 11, num2= 10
+var num3 = num2 - num--;
+// num = 10, num2 = 10, num3 = -1 
+var num4= num3 + num;
+// num = 10; num2 = 10; num3= -1;num4 = 9
+
+
+
+
+
+
+
+5) var num = "10";
+   num = num-- + num-- + num--;
+   console.log(num)
+
+
+
+
+
+
+
+6) var num = "10";
+   
++num = num;
+   console.log(num);
+
+
+
+
