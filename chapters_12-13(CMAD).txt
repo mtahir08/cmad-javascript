@@ -1,0 +1,95 @@
+
+
+1) var a = 10, b = 12, c = 0;
+	i) a != 6 && b > 5;
+	ii) ! ( a < 10 );
+	iii) !c;
+	iv) !( a > 5 && c );
+	
+
+
+
+
+
+
+
+
+2) var a = 40 ;
+if ( a > 40 && a < 45 ){
+console.log( "a is greater than 40 and less than 45" );
+}
+
+
+
+
+
+
+
+3) false || true;
+
+
+
+
+
+
+
+
+
+4) false || false;
+
+
+
+
+
+
+5) true || false;
+
+
+
+
+
+
+
+
+
+6) false && false;
+
+
+
+
+
+
+
+7) false && true;
+
+
+
+
+
+
+
+
+
+
+8) true && true;
+
+
+
+
+
+
+
+9) var i = -3, j = 3 ;
+if ( !i + !j * 1 ){
+console.log( "correct" );
+}else{
+console.log( "not corr  ect" );
+}
+
+
+10) 0 == false
+11) 0 === false
+12) 1 == true
+13) 1 === true
+
+
