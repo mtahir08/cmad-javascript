@@ -1,0 +1,81 @@
+
+
+1) a) 
+var i = 0;
+for( ; i < 10; ){
+console.log(i);
+i++;
+}
+
+1) b) 
+NOTE: do not run this on your browser,
+      it will hange your browser 
+var i = 0;
+for( ; ; ){
+	if(i < 10){
+	console.log(i);
+	i++;
+	}
+}
+
+2)for(var i = 0; i < 100; i+=5){
+console.log(i);
+}
+
+
+
+
+3)for(var i = 0; i < 10; i+=5)
+console.log("first line");
+console.log("second line");
+
+
+
+
+
+
+
+4) var j = 10;
+for(var i = 0; i < 100; i+=j){
+console.log("first line"+i);
+}
+
+
+
+
+
+
+5)var j = 10;
+var arr = [4,40,26,69,61,50,65,50,45,10,0];
+for(var i = 0; i < arr.length; i++){
+console.log("inside for loop"+i);
+	if(arr[i] == 50  ){
+	console.log("inside if");
+	break;
+	}
+}
+
+6) for(var i = 0,k=0; i < 10; i++,k++){
+console.log("value of k =="+k);
+}
+
+
+
+7)for(){
+console.log("Hello");
+break;
+}
+
+
+
+8)for(;){
+console.log("Hello Pakistan");
+}
+
+
+
+
+9)for(;;){
+console.log("Hello CMAD");
+break;
+}
