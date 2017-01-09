@@ -103,7 +103,8 @@
 
 
 
-===  -> !== (check value + type)
+=== (check value and(&&) type)
+!== (check value or(||) type)
 ==   -> !=  (only check values)
 
 
