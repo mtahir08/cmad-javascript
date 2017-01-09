@@ -1,0 +1,151 @@
+
+
+
+
+
+1) var arr = [32,"asd",true,54,NaN,92,"qwerty"];
+
+   console.log(arr[-2]);
+
+
+
+
+
+
+
+
+2) var arr = [1,2,3,4,5];
+  
+  console.log(arr[arr.length]);
+
+
+
+
+
+
+
+
+
+
+
+3) a) 
+   var arr = [1,2,3,4,5];//12036
+
+   var arr2 = arr;
+   arr.push(6,7,8,9);
+
+   arr2.push(10,11,12,13);
+ 
+   console.log(arr);
+
+   console.log(arr2);
+
+
+
+
+3) b)
+   var arr = [1,2,3,4,5];//12036
+
+   var arr2 = arr.slice(0);
+   arr.push(6,7,8,9);
+
+   arr2.push(10,11,12,13);
+ 
+   console.log(arr);
+
+   console.log(arr2);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4) var arr = [];
+   
+   var arr2 = [];
+ 
+   console.log(arr == arr2);//not equal
+
+
+
+
+
+
+
+5) var arr = [1,2,3];
+
+   arr[5] = 10;
+ 
+   arr.push(4,5);
+
+   console.log(arr);
+   console.log(arr.length);
+
+
+
+
+
+6) var arr = [1,2,3];
+
+   arr[5] = 10;
+
+   arr.push(4,5); 
+   arr[8].push(10)
+ 
+   console.log(arr);
+
+
+
+
+
+
+7) var arr = [1,2,3];
+
+   arr[5] = 10;
+ 
+   arr.push(4,5);
+
+   arr[8] = [];
+
+   arr[8].push(10);
+
+   console.log(arr);
+
+
+8) var arr = [1,2,3];
+   arr.push(arr.pop());
+
+
+9) var arr = [1,2,3];
+
+   arr.push().pop();
+
+10) var arr = [1,2,3];
+   arr.push(arr.splice(1,1));
+
+11) var arr = [1,2,3];
+   arr.push(arr.splice(1,1).pop());
