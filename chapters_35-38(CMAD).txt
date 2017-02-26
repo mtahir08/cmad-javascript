@@ -1,0 +1,96 @@
+
+1) function func (){return "abc";}
+
+   console.log(typeof func)
+
+   console.log(typeof func())
+
+
+
+
+
+
+
+
+
+
+
+
+
+2)  function func(){
+  
+     var a = 10
+   
+    }
+   
+    func();
+    document.write(a)
+   
+   
+
+
+
+3) function func(){
+      
+	document.write("inside function<br/>")
+   
+}
+   
+document.write("outside function<br/>")
+func();
+
+
+
+
+
+
+
+
+
+4) var a = "hello";
+  
+ function func(){
+
+      var a = "world";
+      
+	document.write("<h1> 1"+a+"</h1>")
+   
+}
+
+document.write("<h1>2 "+a+"</h1>")
+func()
+   
+document.write("<h1> 3"+a+"</h1>")
+
+
+5) var a = "hello";
+  
+ function func(){
+
+      a = "world";
+      
+	document.write("1 <h1>"+a+"</h1>")
+   
+}
+
+document.write("2 <h1>"+a+"</h1>")
+func()
+   
+document.write("3 <h1>"+a+"</h1>")
+
+
+
+
+
+
+
+6) function chicken() { 
+       return egg();
+    } 
+    function egg() { 
+        return chicken();
+    } 
+    alert(chicken() + " came first.");
+
+
+
