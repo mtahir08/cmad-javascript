@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Demo Slider 2</title>
+    <style>
+        .setValue {
+            width: 600px;
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div style="text-align: center">
+        <div id="slider">
+
+        </div>
+        <a href="javascript:void(0);" onClick="showNext();"> &gt; </a>
+    </div>
+    <script>
+        var images = ["1.jpg", "2.jpg", "3.jpg", "4.jpg"];
+        var totalImages = 4;
+        var currentImage = 0;
+        showNext();
+        function showNext() {
+            if (currentImage == totalImages) currentImage = 0;
+            document.getElementById("slider").innerHTML = "<img src='images/" + images[currentImage] + "' class='setValue' />"
+            currentImage++;
+        }
+    </script>
+</body>
+
+</html>

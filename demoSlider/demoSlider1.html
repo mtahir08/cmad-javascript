@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Demo Slider 1</title>
+    <style>
+        .widthHeight {
+            width: 800px;
+            height: 400px
+        }
+        .hide {
+            display: none;
+        }
+        
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="text-align: center">
+    <ul class="images">
+        <li id="0"><img src="images/1.jpg" class="widthHeight"/></li>
+        <li id="1"><img src="images/2.jpg" class="widthHeight"/></li>
+        <li id="2"><img src="images/3.jpg" class="widthHeight"/></li>
+        <li id="3"><img src="images/4.jpg" class="widthHeight"/></li>
+    </ul>
+    <a href="javascript:void(0);" onClick="Next();"> &gt;&gt; </a>
+    </div>
+</body>
+<script>
+    var totalSlides = 4;
+    var currentSlide = 0;
+    Next();
+    function Next() {
+        if (currentSlide == totalSlides) currentSlide = 0;
+        for (var i = 0; i < totalSlides; i++) {
+            if (i == currentSlide) document.getElementById(i).className = "show";
+            else document.getElementById(i).className = "hide";
+        }
+        currentSlide++;
+    }
+
+</script>
+
+</html>
