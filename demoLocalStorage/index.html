@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="inputBox">
+        <button onClick="saveIntoLocalStorage()"> Add </button>
+    </div>
+    <div id="displayInDiv"></div>
+    <table id="tableId">
+    </table>
+    <script>
+        var nameArray = [];
+        function saveIntoLocalStorage() {
+            nameArray.push(document.getElementById("inputBox").value)
+            displayData();
+        }
+
+        function displayData() {
+            document.getElementById("tableId").innerHTML = "";
+            document.getElementById("tableId").innerHTML += "<tr><th>Index</th><th>Name</th><th></th></tr>";
+            for (var i = 0; i < nameArray.length; i++) {
+                document.getElementById("tableId").innerHTML += "<tr><td>" + i + "</td><td>" + nameArray[i] + "</td><td><button onClick=deleteRow(" + i + ")>Delete</button></td></tr>";
+            }
+        }
+
+        function deleteRow(index) {
+            nameArray.splice(index, 1);
+            displayData();
+        }
+
+        displayData();
+    </script>
+</body>
+
+</html>

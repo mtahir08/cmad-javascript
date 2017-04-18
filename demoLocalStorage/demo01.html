@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="inputBox">
+        <button onClick="saveIntoLocalStorage()"> Add </button>
+    </div>
+    <table id="tableId">
+    </table>
+    <script>
+        var nameArray = [];
+        function saveIntoLocalStorage() {
+            // name push in array 
+            nameArray.push(document.getElementById("inputBox").value)
+            // nameArray save in localStorage            
+            localStorage.setItem("names", nameArray);
+            // Render array data using this function
+            displayData();
+        }
+
+        function displayData() {
+
+            // empty table element            
+            document.getElementById("tableId").innerHTML = "";
+
+            // get localStorage value                        
+            var newArray = localStorage.getItem("names");
+            if (newArray) {
+                newArray = newArray.split(",");
+                nameArray = newArray;
+                document.getElementById("tableId").innerHTML += "<tr><th>Index</th><th>Name</th><th></th></tr>";
+            } else newArray = [];
+
+            // loop in array to show all names
+            for (var i = 0; i < newArray.length; i++) {
+                document.getElementById("tableId").innerHTML += "<tr><td>" + i + "</td><td>" + newArray[i] + "</td><td><button onClick=deleteRow(" + i + ")>Delete</button></td></tr>";
+            }
+
+        }
+
+        // remove particular row from table and name from localStorage
+        function deleteRow(index) {
+            // Remove name from array
+            nameArray.splice(index, 1);
+            // Then above array set in localStorage
+            localStorage.setItem("names", nameArray);
+            displayData();
+        }
+        displayData();
+    </script>
+</body>
+
+</html>
