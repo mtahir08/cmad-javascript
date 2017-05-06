@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./font-awesome-4.7.0 (1)/font-awesome-4.7.0/css/font-awesome.css">
+    <style>
+        .abc{
+            color:green;
+        }
+    </style>
+</head>
+
+<body>
+
+    Filter Array <br>
+    <input type="text" id="filterInput" onkeyup="filterItems()" placeholder="Search here">
+    <input type="text" id="add" placeholder="add new item">
+    <button onclick="addTodo()"> 
+        <i class="fa fa-plus abc" aria-hidden="true"></i> 
+        Add Todo</button>
+    <br />
+    <ul id="filterList">
+
+    </ul>
+<button onclick="arraySort()">Sort</button>
+        <button onclick="OriginalSort()">Original</button>
+    <script>
+        var TodoArray = [];
+
+        function addTodo() {
+            var todo = document.getElementById("add");
+            TodoArray.push(todo.value);
+            renderArray(TodoArray);
+            todo.value = "";
+        }
+
+        function renderArray(array) {
+            var items = '';
+            // TodoArray = ["abc","cde","aaa","bbb"]            
+            // array.forEach(function ( val,index, arrayItSelf) {
+            //     items += "<li>" + val + "</li>"
+            // });
+            for (var i = 0; i < array.length; i++) {
+                items += "<li>" + array[i] + "</li>"
+            }
+            document.getElementById("filterList").innerHTML = items;
+        }
+
+        renderArray(TodoArray);
+           
+        
+        function filterItems() {
+            var filterValue = document.getElementById("filterInput");
+            // TodoArray = ["abc","cde","aaa","bbb"]
+            var newFilterArray = TodoArray.filter(function(value,index) {
+                var newValue = value.toLowerCase();
+                var filtered = filterValue.value.toLowerCase();
+
+                return newValue.search(filtered) != -1 //newValue.includes(filterValue.value.toLowerCase());
+            })
+            console.log(newFilterArray)
+            renderArray(newFilterArray)
+        }
+
+        function arraySort() {
+            // create new array for change ref
+            var sortArray = TodoArray.slice(0).sort();
+            renderArray(sortArray);
+        }
+
+        function OriginalSort(){
+            renderArray(TodoArray)
+        }
+    </script>
+</body>
+
+</html>
