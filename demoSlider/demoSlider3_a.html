@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Demo Slider 2</title>
+    <style>
+        .setValue {
+            width: 600px;
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <style>
+        .circles {
+            width: 10px;
+            height: 10px;
+            border: 1px solid black;
+            border-radius: 100%;
+            margin: 0 auto;
+            margin-top: -110px;
+            display: inline-block;
+            /*z-index: 9999;*/
+        }
+
+        #changeBackground {
+            background: black;
+        }
+
+        #removeBackground {
+            background: #fff;
+        }
+    </style>
+    <div style="text-align: center">
+        <div id="slider">
+
+        </div>
+        <a href="javascript:void(0);" onClick="showPrevious();"> &lt; </a>
+        <a href="javascript:void(0);" onClick="showNext();"> &gt; </a>
+        <div>
+            <!--<div id="counter"> </div>-->
+        </div>
+        <div class="circles"></div>
+        <div class="circles"></div>
+        <div class="circles"></div>
+        <div class="circles"></div>
+    </div>
+    <script>
+        var images = ["1.jpg", "2.jpg", "3.jpg", "4.jpg"];
+        var totalImages = 4;
+        var currentImage = 0;
+        var next = true;
+        showNext();
+        setInterval(function () {
+            showNext();
+
+        }, 3000)
+        function showNext() {
+            if (!next) currentImage++;
+            if (currentImage == totalImages) currentImage = 0;
+            document.getElementById("slider").innerHTML = "<img src='images/" + images[currentImage] + "' class='setValue' />"
+            dotCircles()
+            currentImage++;
+            next = true;
+        }
+        function showPrevious() {
+            if (next) currentImage--;
+            if (currentImage == 0) currentImage = totalImages;
+            document.getElementById("slider").innerHTML = "<img src='images/" + images[currentImage - 1] + "' class='setValue' />"
+            currentImage--;
+            dotCircles();
+            next = false;
+        }
+        function dotCircles() {
+            var a = document.getElementsByClassName("circles");
+            for (var i = 0; i < a.length; i++) {
+                if (i == currentImage) {
+                    a[i].id = "changeBackground";
+                }
+                else {
+                    a[i].id = "removeBackground";
+                }
+
+            }
+        }
+    </script>
+</body>
+
+</html>
