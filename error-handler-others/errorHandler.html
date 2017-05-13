@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="fname">
+    <input type="button" value="submit" onclick="getValue();">
+    <script>
+        function getValue() {
+            var fnameValue = document.getElementById("fname").value;
+            try {
+                if (fnameValue.length == 2) {
+                    console.log("value entered")
+                } else if(fnameValue.length == 3){
+                    throw "First name length must be of 2 characters";
+                } else throw "Please enter value first"
+            } catch (error) {
+                console.log(error);
+            } finally {
+            document.getElementById("fname").value = "";
+            console.log("this console is in finally block.");    
+            }
+        }
+    </script>
+</body>
+
+</html>

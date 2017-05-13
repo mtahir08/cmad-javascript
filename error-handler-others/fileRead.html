@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="file" id="myFile" accept=".pdf, .jpg">
+    <input type="button" onclick="loadImageFileAsURL()">
+    <script>
+            function loadImageFileAsURL() {
+                var filesSelected = document.getElementById("myFile").files;
+                if (filesSelected.length == 0)
+                    alert("Please Select File First");
+                else {
+                    if (filesSelected.length > 0) {
+                        console.log(filesSelected);
+                        var fileToLoad = filesSelected[0];
+                        var fileReader = new FileReader();
+                        fileReader.onload = function (fileLoadedEvent) {
+                            var file = fileLoadedEvent.target.result;
+                            console.log(file);
+                        document.getElementById("iframee").src = file
+                        };
+                        fileReader.readAsDataURL(fileToLoad);
+                    }
+                }
+            };
+    </script>
+    <iframe id="iframee" width="500" height="500" />
+    
+</body>
+</html>
