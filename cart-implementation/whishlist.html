@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+    .hide{
+        display: hide;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <ul>
+            <li><a href="index.html">Images</a></li>
+            <li><a href="mobiles.html">Mobiles</a></li>
+            <li><a href="furniture.html">Furnitures</a></li>
+            <li><a href="flowers.html">Flowers</a></li>
+        </ul>
+
+    </div>
+    <div id="mainDiv">
+        <table id="tb1">
+            <thead>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th></th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="order-btn">
+        <button onclick="placeOrder()">Order Now</button>
+    </div>
+</body>
+<script>
+    var items = localStorage.getItem("whishlist") || [];
+    items.length > 0 ? items = JSON.parse(items) : false;
+    if (!items.length) {
+        document.getElementById("mainDiv").innerHTML = "No item selected!!"
+    }
+    var totalItems = 0;
+    var totolPrice = 0;
+    showData();
+    function showData() {
+        // document.getElementById("mainDiv").innerHTML += `<table><tr><th>Image</th><th>Name</th><th>Quantity</th><th>Price</th><th></th></tr>`
+        for (var i = 0; i < items.length; i++) {
+            // document.getElementById("mainDiv").innerHTML += `<div id=` + i + ` class="image" ><h4>` + items[i].name + `</h4><img src="./images/` + items[i].image + `" alt="" class="imageSize" ><div><div class="qty">` + items[i].quantity + `</div><div class="pric">` + items[i].price * items[i].quantity + `</div></div></div>`;
+            document.getElementById("tb1").innerHTML += `<tr> <td id="img-td"> <img src="./images/` + items[i].image + `" alt="" class="imageSize" ></td><td> ` + items[i].name + `</td><td><button  onclick="decrementItem(` + i + `)"><i class="fa fa-minus"></i></button>` + items[i].quantity + `<button onclick="incrementItem(` + i + `)"><i class="fa fa-plus"></i></button> </td><td> ` + items[i].price * items[i].quantity + `/-</td></tr>`
+            totalItems += items[i].quantity;
+            totolPrice += items[i].quantity * items[i].price;            
+    }
+        document.getElementById("tb1").innerHTML += `<tr><td colspan="3">Total items :`+ totalItems +`</td><td>Total Price : `+ totolPrice +`/-</td></tr>`
+    }
+
+    function placeOrder(){
+        localStorage.removeItem("whishlist");
+    }
+</script>
+<script src="./js/functions.js"></script>
+<!--<script src="./js/mobiles.js"></script>-->
+<!--<script src="./js/app.js"></script>-->
+
+</html>
