@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flowers</title>
+    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+    <div id="header">
+        <ul>
+            <li><a href="index.html">Images</a></li>
+            <li><a href="mobiles.html">Mobiles</a></li>
+            <li><a href="furniture.html">Furnitures</a></li>
+            <li><a href="flowers.html">Flowers</a></li>
+        </ul>
+        <div id="whishlist">2</div>
+        <div id="whishlist-page"><a href="whishlist.html">Goto whishlist</a></div>
+
+    </div>
+    <div id="mainDiv">
+        <div id="0" class="image" onmouseout="hideButtons(0)" onmouseover="showButtons(0)">
+            <h4>item 031</h4>
+            <h4 class="price">Rs: 120/-</h4><img src="./images/flower.jpg" alt="" class="imageSize">
+            <div class="btn"><button class="button" onclick="decrementItem(0)"><i class="fa fa-minus fa-3x"></i></button><button class="button"
+                    onclick="incrementItem(0)"><i class="fa fa-plus fa-3x"></i></button></div>
+        </div>
+        <div id="1" class="image" onmouseout="hideButtons(1)" onmouseover="showButtons(1)">
+            <h4>item 032</h4>
+            <h4 class="price">Rs: 160/-</h4><img src="./images/flower.jpg" alt="" class="imageSize">
+            <div class="btn"><button class="button" onclick="decrementItem(1)" style="opacity: 0;"><i class="fa fa-minus fa-3x"></i></button>
+                <button class="button" onclick="incrementItem(1)" style="opacity: 0;"><i class="fa fa-plus fa-3x"></i></button>
+            </div>
+        </div>
+        <div id="2" class="image" onmouseout="hideButtons(2)" onmouseover="showButtons(2)">
+            <h4>item 033</h4>
+            <h4 class="price">Rs: 360/-</h4><img src="./images/flower.jpg" alt="" class="imageSize">
+            <div class="btn"><button class="button" onclick="decrementItem(2)"><i class="fa fa-minus fa-3x"></i></button><button class="button"
+                    onclick="incrementItem(2)"><i class="fa fa-plus fa-3x"></i></button></div>
+        </div>
+        <div id="3" class="image" onmouseout="hideButtons(3)" onmouseover="showButtons(3)">
+            <h4>item 034</h4>
+            <h4 class="price">Rs: 620/-</h4><img src="./images/flower.jpg" alt="" class="imageSize">
+            <div class="btn"><button class="button" onclick="decrementItem(3)"><i class="fa fa-minus fa-3x"></i></button><button class="button"
+                    onclick="incrementItem(3)"><i class="fa fa-plus fa-3x"></i></button></div>
+        </div>
+        <div id="4" class="image" onmouseout="hideButtons(4)" onmouseover="showButtons(4)">
+            <h4>item 035</h4>
+            <h4 class="price">Rs: 220/-</h4><img src="./images/flower.jpg" alt="" class="imageSize">
+            <div class="btn"><button class="button" onclick="decrementItem(4)"><i class="fa fa-minus fa-3x"></i></button><button class="button"
+                    onclick="incrementItem(4)"><i class="fa fa-plus fa-3x"></i></button></div>
+        </div>
+        <div id="5" class="image" onmouseout="hideButtons(5)" onmouseover="showButtons(5)">
+            <h4>item 036</h4>
+            <h4 class="price">Rs: 920/-</h4><img src="./images/flower.jpg" alt="" class="imageSize">
+            <div class="btn"><button class="button" onclick="decrementItem(5)"><i class="fa fa-minus fa-3x"></i></button><button class="button"
+                    onclick="incrementItem(5)"><i class="fa fa-plus fa-3x"></i></button></div>
+        </div>
+        <div id="6" class="image" onmouseout="hideButtons(6)" onmouseover="showButtons(6)">
+            <h4>item 037</h4>
+            <h4 class="price">Rs: 423/-</h4><img src="./images/flower.jpg" alt="" class="imageSize">
+            <div class="btn"><button class="button" onclick="decrementItem(6)"><i class="fa fa-minus fa-3x"></i></button><button class="button"
+                    onclick="incrementItem(6)"><i class="fa fa-plus fa-3x"></i></button></div>
+        </div>
+        <div id="7" class="image" onmouseout="hideButtons(7)" onmouseover="showButtons(7)">
+            <h4>item 038</h4>
+            <h4 class="price">Rs: 321/-</h4><img src="./images/flower.jpg" alt="" class="imageSize">
+            <div class="btn"><button class="button" onclick="decrementItem(7)"><i class="fa fa-minus fa-3x"></i></button><button class="button"
+                    onclick="incrementItem(7)"><i class="fa fa-plus fa-3x"></i></button></div>
+        </div>
+        <div id="8" class="image" onmouseout="hideButtons(8)" onmouseover="showButtons(8)">
+            <h4>item 039</h4>
+            <h4 class="price">Rs: 456/-</h4><img src="./images/flower.jpg" alt="" class="imageSize">
+            <div class="btn"><button class="button" onclick="decrementItem(8)"><i class="fa fa-minus fa-3x"></i></button><button class="button"
+                    onclick="incrementItem(8)"><i class="fa fa-plus fa-3x"></i></button></div>
+        </div>
+        <div id="9" class="image" onmouseout="hideButtons(9)" onmouseover="showButtons(9)">
+            <h4>item 040</h4>
+            <h4 class="price">Rs: 951/-</h4><img src="./images/flower.jpg" alt="" class="imageSize">
+            <div class="btn"><button class="button" onclick="decrementItem(9)"><i class="fa fa-minus fa-3x"></i></button><button class="button"
+                    onclick="incrementItem(9)"><i class="fa fa-plus fa-3x"></i></button></div>
+        </div>
+    </div>
+
+    <script src="./js/flowers.js"></script>
+    <script src="./js/functions.js"></script>
+    <script src="./js/app.js"></script>
+
+</body>
+
+</html>

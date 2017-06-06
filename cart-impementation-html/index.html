@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+    <div id="header">
+        <ul>
+            <li><a href="index.html">Images</a></li>
+            <li><a href="mobiles.html">Mobiles</a></li>
+            <li><a href="furniture.html">Furnitures</a></li>
+            <li><a href="flowers.html">Flowers</a></li>
+        </ul>
+        <div id="whishlist">0</div>
+        <div id="whishlist-page"><a href="whishlist.html">Goto whishlist</a></div>
+
+    </div>
+    <div id="mainDiv">
+        <div id="0" class="image" onmouseout="hideButtons(0)" onmouseover="showButtons(0)">
+            <h4>item 001</h4>
+            <h4 class="price">Rs: 90/-</h4><img src="./images/dummy.png" alt="" class="imageSize">
+            <div class="btn">
+                <button class="button" onclick="decrementItem(0)" style="opacity: 0;"><i class="fa fa-minus fa-3x"></i></button>
+                <button class="button" onclick="incrementItem(0)" style="opacity: 0;"><i class="fa fa-plus fa-3x"></i></button>
+            </div>
+        </div>
+        <div id="1" class="image" onmouseout="hideButtons(1)" onmouseover="showButtons(1)">
+            <h4>item 002</h4>
+            <h4 class="price">Rs: 65/-</h4><img src="./images/dummy.png" alt="" class="imageSize">
+            <div class="btn"><button class="button" onclick="decrementItem(1)" style="opacity: 0;"><i class="fa fa-minus fa-3x"></i></button>
+                <button
+                    class="button" onclick="incrementItem(1)" style="opacity: 0;"><i class="fa fa-plus fa-3x"></i></button>
+            </div>
+        </div>
+        <div id="2" class="image" onmouseout="hideButtons(2)" onmouseover="showButtons(2)">
+            <h4>item 003</h4>
+            <h4 class="price">Rs: 45/-</h4><img src="./images/dummy.png" alt="" class="imageSize">
+            <div class="btn"><button class="button" onclick="decrementItem(2)" style="opacity: 0;"><i class="fa fa-minus fa-3x"></i></button>
+                <button
+                    class="button" onclick="incrementItem(2)" style="opacity: 0;"><i class="fa fa-plus fa-3x"></i></button>
+            </div>
+        </div>
+        <div id="3" class="image" onmouseout="hideButtons(3)" onmouseover="showButtons(3)">
+            <h4>item 004</h4>
+            <h4 class="price">Rs: 90/-</h4><img src="./images/dummy.png" alt="" class="imageSize">
+            <div class="btn"><button class="button" onclick="decrementItem(3)" style="opacity: 0;"><i class="fa fa-minus fa-3x"></i></button>
+                <button
+                    class="button" onclick="incrementItem(3)" style="opacity: 0;"><i class="fa fa-plus fa-3x"></i></button>
+            </div>
+        </div>
+        <div id="4" class="image" onmouseout="hideButtons(4)" onmouseover="showButtons(4)">
+            <h4>item 005</h4>
+            <h4 class="price">Rs: 54/-</h4><img src="./images/dummy.png" alt="" class="imageSize">
+            <div class="btn"><button class="button" onclick="decrementItem(4)"><i class="fa fa-minus fa-3x"></i></button><button class="button"
+                    onclick="incrementItem(4)"><i class="fa fa-plus fa-3x"></i></button></div>
+        </div>
+        <div id="5" class="image" onmouseout="hideButtons(5)" onmouseover="showButtons(5)">
+            <h4>item 006</h4>
+            <h4 class="price">Rs: 45/-</h4><img src="./images/dummy.png" alt="" class="imageSize">
+            <div class="btn"><button class="button" onclick="decrementItem(5)"><i class="fa fa-minus fa-3x"></i></button><button class="button"
+                    onclick="incrementItem(5)"><i class="fa fa-plus fa-3x"></i></button></div>
+        </div>
+        <div id="6" class="image" onmouseout="hideButtons(6)" onmouseover="showButtons(6)">
+            <h4>item 007</h4>
+            <h4 class="price">Rs: 90/-</h4><img src="./images/dummy.png" alt="" class="imageSize">
+            <div class="btn"><button class="button" onclick="decrementItem(6)"><i class="fa fa-minus fa-3x"></i></button><button class="button"
+                    onclick="incrementItem(6)"><i class="fa fa-plus fa-3x"></i></button></div>
+        </div>
+        <div id="7" class="image" onmouseout="hideButtons(7)" onmouseover="showButtons(7)">
+            <h4>item 008</h4>
+            <h4 class="price">Rs: 87/-</h4><img src="./images/dummy.png" alt="" class="imageSize">
+            <div class="btn"><button class="button" onclick="decrementItem(7)"><i class="fa fa-minus fa-3x"></i></button><button class="button"
+                    onclick="incrementItem(7)"><i class="fa fa-plus fa-3x"></i></button></div>
+        </div>
+        <div id="8" class="image" onmouseout="hideButtons(8)" onmouseover="showButtons(8)">
+            <h4>item 009</h4>
+            <h4 class="price">Rs: 12/-</h4><img src="./images/dummy.png" alt="" class="imageSize">
+            <div class="btn"><button class="button" onclick="decrementItem(8)"><i class="fa fa-minus fa-3x"></i></button><button class="button"
+                    onclick="incrementItem(8)"><i class="fa fa-plus fa-3x"></i></button></div>
+        </div>
+    </div>
+
+    <script src="./js/index.js"></script>
+    <script src="./js/functions.js"></script>
+    <script src="./js/app.js"></script>
+
+
+</body>
+
+</html>
