@@ -1,0 +1,30 @@
+1) In imperative way we define how our program will work // true or false
+2) In Declartive way of coding we define how our program will work // true or false
+3) Declarative way of coding only concern with what to do not how to do // correct ?
+4) .map method return new array with same length. correct or not?
+5) .map method returns new array with same reference. Correct or not?
+6) var retuslt = [1,2,3,4,5].map(function(item){ 
+	if(item == 3) break;
+	return item*2
+})
+
+7) var retuslt = [1,2,3,4,5].map((item)=>{ 
+	if(item == 3) break;
+	return item*2
+}) 
+
+8) var total = [1,2,3,4,5].reduce((total, item)=>{ 
+	return total + item;
+}) 
+
+9) var total = [1,2,3,4,5].reduce((total, item) =>{ 
+	return total + item;
+}, 10) 
+
+10) var square = (param) => { param * param}
+
+11) var square = (param) =>  param * param
+
+12) var text = `es6`;
+var showText = `This is in ${text}`
+console.log(showText);
