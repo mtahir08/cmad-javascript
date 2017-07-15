@@ -1,0 +1,48 @@
+1) var obj1 = { name:"abc", email:"email@example.com"}
+var obj2 = obj1;
+obj2.name = "xyz";
+console.log(obj1);
+console.log(obj2);
+
+
+
+
+
+
+
+
+
+
+//When an object variable is copied 
+–the reference is copied, the object is not duplicated.
+
+
+
+3) var obj1 = { name:"abc", email:"email@example.com"}
+var obj2 = { name:"abc", email:"email@example.com"}
+obj1 == obj2; //true or false?
+
+
+
+
+
+
+2) Consider question #1; 
+	obj1 == obj2 // true or false?
+
+
+
+3) var obj1 = { name:"abc", email:"email@example.com"}
+var obj2 = obj1;
+delete obj2.name
+console.log(obj1);
+console.log(obj2);
+
+
+5) var obj1 = { name:"abc", email:"email@example.com"};
+var obj2 = Object.assign({}, obj1);
+
+
+//var obj2 = Object.assign({}, obj1,{name:"jhon"},{pass:"123"},{name:"Alice",pass:'456'});
+
+
