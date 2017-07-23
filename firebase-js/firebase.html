@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Firebase basic</title>
+</head>
+
+<body>
+    <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "<apikey>",
+            authDomain: "<domain.firebaseapp.com>",
+            databaseURL: "<https://databaseurl.firebaseio.com>",
+            projectId: "<projectId>"
+        };
+        firebase.initializeApp(config);
+        // Get database reference 
+        let ref = firebase.database().ref();
+        // =================
+        let users = [];
+        let keyArray = [];
+        ref.child("users").on("value", (snapshot) => {
+            users = [];
+            let data = snapshot.val();
+            for (let key in data) {
+                keyArray.push(key);
+                users.push(data[key]);
+            }
+            users.length ? displayDate(users) : false;
+        });
+
+        function AddUser() {
+            const usrName = document.getElementById("username").value;
+            // check entered username if this node already 
+            if (keyArray.indexOf(usrName) != -1) {
+                alert(`${usrName} username already exists`);
+                return;
+            }
+            let obj = { username: '', name: '', email: '' }
+            obj["username"] = usrName;
+            obj["name"] = document.getElementById("name").value;
+            obj["email"] = document.getElementById("email").value;
+            ref.child(`users`).child(obj.username).set(obj);
+        }
+
+        function displayDate(users) {
+            document.getElementById("data").innerHTML = `
+            <table>
+            <tr><td>Index</td><td>name</td><td>username</td><td>email</td></tr>
+            ${users.map((user, index) =>
+                    `<tr><td>${index + 1}</td><td>${user.name}</td><td>${user.username}</td><td>${user.email}</td><td><button onclick="remove(${index})">remove</button></td></tr>`)}
+            </table>` }
+
+        function remove(i) {
+            // in 'users' node 
+            ref.child(`users/${users[i].username}`).remove();
+            // After removing node call display function to re render data
+            // with updated values
+            displayDate(users);
+        }
+    </script>
+    <div>
+        <br> Name: <input type="text" id="name"><br/> UserName: <input type="text" id="username"><br/> Email: <input type="text"
+            id="email"><br>
+        <button onClick="AddUser()">Add</button>
+    </div>
+    <div id="data"></div>
+
+</body>
+
+</html>
