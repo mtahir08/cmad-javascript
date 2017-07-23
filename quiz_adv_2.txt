@@ -1,0 +1,102 @@
+q1) difference-between-synchronous-and-asynchronous-programming
+
+
+
+
+
+
+
+
+
+q2) function func() {
+	console.log("1");
+	console.log("2");
+	console.log("3")
+	}
+ func() 
+
+
+
+q3)  function func() {
+	console.log("1");
+	setTimeout(()=>{console.log("2");})
+	console.log("3")
+}
+
+
+
+
+
+q4) function callback() {
+	console.log("Hello World")
+}
+
+function greet(cb) {
+	cb();
+}
+
+greet(callback);
+
+
+q5)function callback() {
+	console.log("DONE")
+}
+
+function greet(cb) {
+var userData = getData(function (data) {
+	console.log(data.name);
+});
+
+	setTimeout(()=>{
+		cb();
+	},1000 * 10) 
+}
+
+greet(callback);
+
+
+
+
+
+
+
+q6) function callback() {
+	console.log("Hello World")
+}
+
+function greet(cb) {
+	cb();
+}
+
+greet(callback());
+
+
+q7)function callback() {
+	 console.log("Hello World");
+	return function () {
+		console.log(" ==== DONE ======");
+	}
+console.log("AFTER RETURN");
+}
+
+function greet(cb) {
+	cb();
+}
+
+greet(callback());
+
+q8)function callback() {
+	 console.log("Hello World");
+	return function () {
+		console.log(" ==== DONE ======");
+	}
+console.log("AFTER RETURN");
+}
+
+function greet(cb) {
+	console.log("1")
+	cb();
+	console.log("2")
+}
+
+greet(callback());

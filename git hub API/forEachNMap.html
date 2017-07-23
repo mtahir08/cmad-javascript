@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function forEachCustom(array, cb) {
+            for (var i = 0; i < array.length; i++) {
+                cb(array[i], i);
+            }
+
+        }
+        var arr = [1, 2, 3, 4, 5];
+        forEachCustom(arr, function (val, i) {
+            console.log(val, i)
+        })
+
+
+        function mapCustom(array, cb) {
+            var newArray = [];
+            for (var i = 0; i < array.length; i++) {
+                newArray.push(cb(array[i], i));
+            }
+            return newArray;
+
+        }
+        var arr = [1, 2, 3, 4, 5,"hello"];
+        var newArray1 = mapCustom(arr, function (val, i) {
+            return val + " Pakistan";
+        });
+
+        console.log(newArray1)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

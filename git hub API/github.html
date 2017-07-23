@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <style>
+        .img {
+            width: 10em;
+            height: 10em;
+            border-radius: 10px;
+            margin-right: 2em;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        #mainDiv {
+            width: 50em;
+            margin: 0 auto;
+            margin-top: 6rem;
+            /* text-align: center; */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            display: none;
+        }
+
+        .column {
+            flex-direction: column;
+        }
+
+        .marginRight {
+            margin-right: 1em;
+        }
+
+        .width6em {
+            width: 6em;
+        }
+
+        .loader {
+            border: 2px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 2px solid #3498db;
+            width: 20px;
+            height: 20px;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+        }
+        .loaderContainer {
+                position: fixed;
+                top: 45%;
+                right: 50%;
+                left: 50%;
+        }
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="loaderContainer" id="loader">
+        <div class="loader"></div>
+    </div>
+    <div id="mainDiv">
+        <div class="row">
+            <img id="avator" class="img">
+            <div class="row column">
+                <h1 id="name"></h1>
+                <div class="row ">
+                    <span class="marginRight">Link: </span>
+                    <a href="" id="link"></a>
+                </div>
+                <div class="row ">
+                    <span class="marginRight">Repos: </span>
+                    <b id="repos"></b>
+                </div>
+                <div class="row ">
+                    <span class="marginRight">Followers: </span>
+                    <b id="follower"></b>
+                </div>
+
+                <div class="row ">
+                    <span class="marginRight">Following: </span>
+                    <b id="following"></b>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    const baseUrl = 'https://api.github.com/users/';
+    let userId = prompt('Enter your Github Id');
+    let url = baseUrl + userId;
+    if (userId !== "" && userId !== null) {
+        $.get(url, (data, status) => {
+            console.log(data);
+
+            document.getElementById("loader").style.display = "none"
+            document.getElementById("mainDiv").style.display = "block"
+            document.getElementById("avator").src = data.avatar_url;
+            document.getElementById("name").innerText = data.name;
+            document.getElementById("link").innerText = data.login;
+            document.getElementById("repos").innerText = data.public_repos;
+            document.getElementById("follower").innerText = data.followers;
+            document.getElementById("following").innerText = data.following;
+            document.getElementById("link").href = data.html_url;
+
+
+        })
+    }
+
+</script>
+
+</html>
