@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function HC(element) {
+            return function (value) {
+                return `<div> 
+				<${element}> ${value} </${element}>
+			</div>`
+            }
+
+        }
+        // first way to use high order function
+        var heading = HC("h1");
+        var text = heading("Hello World");
+        document.write(text);
+
+        //second way to use high order function        
+        document.write(HC("h2")("Hello Pakistan"))
+    </script>
+</body>
+
+</html>

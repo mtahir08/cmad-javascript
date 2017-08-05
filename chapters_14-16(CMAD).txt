@@ -29,30 +29,22 @@
 
 
 3) a) 
-   var arr = [1,2,3,4,5];//12036
-
+   var arr = [1,2,3,4,5];//103254
    var arr2 = arr;
    arr.push(6,7,8,9);
-
    arr2.push(10,11,12,13);
- 
-   console.log(arr);
-
-   console.log(arr2);
+   console.log(arr);//1,...,9
+   console.log(arr2);//1,...,5 10,...13,
 
 
 
 
 3) b)
    var arr = [1,2,3,4,5];//12036
-
    var arr2 = arr.slice(0);
    arr.push(6,7,8,9);
-
    arr2.push(10,11,12,13);
- 
    console.log(arr);
-
    console.log(arr2);
 
 
@@ -88,8 +80,7 @@
    
    var arr2 = [];
  
-   console.log(arr == arr2);//not equal
-
+   console.log(arr == arr2);
 
 
 
@@ -97,9 +88,7 @@
 
 
 5) var arr = [1,2,3];
-
    arr[5] = 10;
- 
    arr.push(4,5);
 
    console.log(arr);
@@ -110,12 +99,9 @@
 
 
 6) var arr = [1,2,3];
-
    arr[5] = 10;
-
    arr.push(4,5); 
    arr[8].push(10)
- 
    console.log(arr);
 
 
@@ -124,28 +110,47 @@
 
 
 7) var arr = [1,2,3];
-
    arr[5] = 10;
- 
    arr.push(4,5);
-
    arr[8] = [];
-
    arr[8].push(10);
-
    console.log(arr);
+
+
 
 
 8) var arr = [1,2,3];
    arr.push(arr.pop());
+   console.log(arr);
+
+
+
 
 
 9) var arr = [1,2,3];
 
    arr.push().pop();
+   console.log(arr);
+
+
+
+
+
 
 10) var arr = [1,2,3];
    arr.push(arr.splice(1,1));
+   alert(arr)	;
+
+
+
+
 
 11) var arr = [1,2,3];
    arr.push(arr.splice(1,1).pop());
+
+
+
+
+
+
+
