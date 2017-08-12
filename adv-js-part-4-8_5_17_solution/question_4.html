@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function makeCapitalize(firstname) {
+            return function (lname) {
+                let firstChar = firstname.slice(0, 1).toUpperCase();
+                let otherChar = firstname.slice(1).toLowerCase();
+                let firstChar1 = lname.slice(0, 1).toUpperCase();
+                let otherChar1 = lname.slice(1).toLowerCase();
+                return `${firstChar}${otherChar} ${firstChar1}${otherChar1}`
+            }
+        }
+        console.log(makeCapitalize("mohammad")("arsalan"));
+    </script>
+</body>
+
+</html>

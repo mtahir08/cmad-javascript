@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function add(a, b) {
+            return a + b;
+        }
+
+        function sub(a, b) {
+            return a - b;
+        }
+
+        function mul(a, b) {
+            return a * b;
+        }
+
+        function div(a, b) {
+            return a / b;
+        }
+
+
+        // High order function with call back
+        function oprator(a, b, opt) {
+            return opt(a, b);
+        }
+
+        console.log(oprator(2, 2, add));
+        console.log(oprator(2, 2, sub));
+        console.log(oprator(2, 2, mul));
+        console.log(oprator(2, 2, div));
+
+        // High order with retruning function 
+        function oprator1(a, b) {
+            return function (opt1) {
+                switch (opt1) {
+                    case '+':
+                        return a + b;
+                    case '-':
+                        return a - b;
+                    case '*':
+                        return a * b;
+                    case '/':
+                        return a / b;
+                    default:
+                        return a + b;
+                }
+            }
+        }
+
+        console.log(oprator1(2,2)("+"));
+        console.log(oprator1(2,2)("-"))
+        console.log(oprator1(2,2)("*"))
+        console.log(oprator1(2,2)("/"))
+    </script>
+
+</body>
+
+</html>
