@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+
+
+<body>
+    <form id="signup" style="display:none">
+        <label for="username">Username</label> <br>
+        <input type="text" id="username"> <br> <br>
+
+        <label for="email">Email</label> <br>
+        <input type="email" id="email"> <br> <br>
+
+        <label for="password">Password</label> <br>
+        <input type="password" id="password"> <br>
+
+        <button type="button" onclick="signup()"> Signup </button>
+    </form>
+
+    <form id="signin" style="display:none">
+        <label for="Lemail">Email</label> <br>
+        <input type="email" id="Lemail"> <br> <br>
+
+        <label for="Lpassword">Password</label> <br>
+        <input type="password" id="Lpassword"> <br>
+
+        <button type="button" onclick="signin()"> Signin </button>
+    </form>
+</body>
+<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "<apikey>",
+        authDomain: "<domain.firebaseapp.com>",
+        databaseURL: "<https://databaseurl.firebaseio.com>",
+        projectId: "<projectId>"
+    };
+    firebase.initializeApp(config);
+    let ref = firebase.database().ref();
+    function getElementValue(elem) {
+        return document.getElementById(elem).value
+    }
+
+    function signup() {
+        let username = getElementValue("username");
+        let email = getElementValue("email");
+        let pass = getElementValue("password");
+        firebase.auth().createUserWithEmailAndPassword(email, pass)
+            .then((res) => {
+                console.log(">>>>>>>>>>>>>>>>>>>> ", res)
+                if (res.uid) {
+                    ref.child("users").child(res.uid).set({
+                        email: email,
+                        username: username,
+                        displayName: username,
+                        photoURL: "https://avatars1.githubusercontent.com/u/844211?v=4&s=460"
+
+                    });
+                    // firebase.auth().onAuthStateChanged(function (user) {
+                    //     if (user) {
+                    //         // User is signed in.
+                    //         user.updateProfile({
+                    //             displayName: username,
+                    //             photoURL: "https://avatars1.githubusercontent.com/u/844211?v=4&s=460"
+                    //         }).then(function () {
+                    //             // Update successful.
+                    //         }, function (error) {
+                    //             // An error happened.
+                    //         });
+
+                    //     } else {
+                    //         // No user is signed in.
+                    //     }
+                    // });
+                    // user.updateProfile({
+                    //     displayName: "Jane Q. User",
+                    //     photoURL: "https://example.com/jane-q-user/profile.jpg"
+                    // }).then(function () {
+                    //     // Profile updated successfully!
+                    //     // "Jane Q. User"
+                    //     var displayName = user.displayName;
+                    //     // "https://example.com/jane-q-user/profile.jpg"
+                    //     var photoURL = user.photoURL;
+                    // }, function (error) {
+                    //     // An error happened.
+                    // });
+
+                    // // Passing a null value will delete the current attribute's value, but not
+                    // // passing a property won't change the current attribute's value:
+                    // // Let's say we're using the same user than before, after the update.
+                    // user.updateProfile({ photoURL: null }).then(function () {
+                    //     // Profile updated successfully!
+                    //     // "Jane Q. User", hasn't changed.
+                    //     var displayName = user.displayName;
+                    //     // Now, this is null.
+                    //     var photoURL = user.photoURL;
+                    // }, function (error) {
+                    //     // An error happened.
+                    // });  
+                    document.getElementById("signup").style.display = 'none'
+                    document.getElementById("signin").style.display = 'block'
+                }
+            })
+            .catch((e) => {
+                console.log("error", e);
+                switch (e.code) {
+                    case 'auth/weak-password':
+                        alert(e.message)
+                        break;
+                    case 'auth/email-already-in-use':
+                        alert(e.message)
+                        break;
+                }
+            })
+    }
+
+    function signin() {
+        let email = getElementValue("Lemail");
+        let pass = getElementValue("Lpassword");
+        firebase.auth().signInWithEmailAndPassword(email, pass)
+            .then((res) => {
+                localStorage.setItem("user", JSON.stringify(res));
+
+                window.location.href = "./dashboard.html"
+            })
+            .catch((e) => {
+                console.log(e);
+                switch (e.code) {
+                    case "auth/wrong-password": // wrong password on sign in
+                        alert(e.message)
+                        break;
+                    case "auth/user-not-found": // user not found on sign in on wrong email
+                        alert(e.message)
+                        break;
+                }
+            })
+    }
+    if (localStorage.getItem("user")) {
+        document.getElementById("signin").style.display = "block";
+    } else {
+        document.getElementById("signup").style.display = "block";
+    }
+
+</script>
+
+</html>
