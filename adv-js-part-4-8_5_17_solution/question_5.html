@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function repeatly(count) {
+            let repeatValueArray = [];
+            return function (repeatValue) {
+                for (let i = 0; i < count; i++) {
+                    repeatValueArray.push(repeatValue)
+                }
+                return repeatValueArray;
+            }
+        }
+        console.log(repeatly(5)("Pakistan"))
+        console.log(repeatly(5)(5))
+        console.log(repeatly(5)([repeatly(5)("hello")]))
+    </script>
+</body>
+
+</html>
