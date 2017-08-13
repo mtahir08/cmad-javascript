@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>This</title>
+</head>
+
+<body>
+    <script>
+        // console.log("outside", this);
+        // function abc(e) {
+        //     console.log("in abc", e);
+        // }
+        // function def() {
+        //     abc();
+        //     console.log("in def", this);
+        // }
+        // def();
+
+        let obj = {
+            name: "my name",
+            func: function () {
+                console.log("in obj", this);
+            }
+        }
+        // obj.func();
+        function myFunc() {
+            console.log(this.name);
+        }
+        // myFunc.apply(obj,[a,s,d,f]);
+        // myFunc.call(obj,q,w,e,r);
+        // let neFunc = myFunc.bind(obj);
+        // console.log(neFunc())
+        function Func(username) {
+            this.name = username;
+            this.func = function () {
+                console.log(this.name, this);
+            }
+        }
+
+        let func1 = new Func("func1") 
+        let func2 = new Func("func2") 
+
+        func1.func();
+        func2.func();
+    </script>
+    <button onclick="abc(this)">click for abc()</button>
+</body>
+
+</html>
