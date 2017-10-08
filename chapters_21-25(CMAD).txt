@@ -1,13 +1,20 @@
-1)var str = "cmad lab";
-var res1 = str.substr(3,4);
-var res2 = str.substring(3,7);
-var res3 = str.slice(3,7);
-var res4 = str.slice(-3,-1);
+1)
+var str = "cmad lab";
+
+var res1 = str.substr(3, 4);
+
+var res2 = str.substring(3, 7);
+
+var res3 = str.slice(3, 7);
+
+var res4 = str.slice(-3, -1);
+
 
 
 
 
 2) new Array(5).toString();
+
 
 
 
@@ -19,7 +26,9 @@ var res4 = str.slice(-3,-1);
 
 
 
+
 4) Number("1") - 1 == 0;
+
 
 
 
@@ -29,8 +38,10 @@ var res4 = str.slice(-3,-1);
 
 
 
+
 6) var time = "09:39:37"
-time .split(":");
+time.split(":");
+
 
 
 
@@ -42,8 +53,11 @@ string`;
 
 
 
-8)  var str1 = "This is string one" ;
-         var str2 = "This is string two" ;
-         var str3 = str1.concat(str2, st1 );
+
+8)  var str1 = "This is string one";
+
+var str2 = "This is string two";
+
+var str3 = str1.concat(str2, st1);
 
 
