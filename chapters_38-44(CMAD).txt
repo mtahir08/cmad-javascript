@@ -1,0 +1,23 @@
+1) while ( x = 0 ; x <10 ; x++ )
+console.log(x);
+
+2) var x = 0;
+	while(){
+	console.log("here");
+	x++;	
+	}
+
+3) do-while would execute its statements at least
+once, even if the condition fails for the first time.
+Is above statement correct?
+
+4) var i = 0;
+do{ 
+console.log( "Hello there \n") ;
+
+}while ( i < 4 ) ;
+
+5) var i = 0;
+do{ 
+console.log( "Hello there \n") 
+};while ( i < 4 ) ;
